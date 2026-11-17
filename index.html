@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="images/favicon.png"><title>ADVOME – Digital marketing & creative agency</title>
+<meta name="description" content="Video editing, social media management, paid ads and videography.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d110e;--card:#141a15;--line:#26302a;--tx:#eef2ea;--mu:#9aa595;--ac:#c3e17a}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.6 'DM Sans',system-ui,sans-serif}
+h1,h2,h3,.logo{font-family:Syne,system-ui,sans-serif}a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}section{padding:96px 0;border-top:1px solid var(--line)}
+.eyebrow{color:var(--ac);letter-spacing:.14em;font-size:.78rem;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:32px}
+nav{position:sticky;top:0;z-index:20;background:rgba(13,17,14,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-weight:800;font-size:1.3rem}.links{display:flex;gap:22px;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--mu)}
+.links a:hover{color:var(--ac)}
+.hero{min-height:88vh;display:flex;align-items:center;border:0;background:radial-gradient(60% 60% at 80% 30%,#24351f 0,transparent 70%)}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.05;margin:14px 0 22px;max-width:760px}
+.hero p{color:var(--mu);max-width:560px;margin-bottom:30px}
+.btn{display:inline-block;padding:13px 24px;border:1px solid var(--ac);color:var(--ac);border-radius:4px;transition:.25s;font-weight:500}
+.btn.fill,.btn:hover{background:var(--ac);color:#10150d}
+.grid{display:grid;gap:22px}.g4{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:pointer;transition:.3s}
+.vcard:hover{transform:translateY(-6px);border-color:var(--ac)}
+.thumb{position:relative;aspect-ratio:9/16;background:#1b2a1c center/cover}
+.thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:var(--ac);display:grid;place-items:center;transition:.3s}
+.play:after{content:"";border-left:16px solid #10150d;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vcard.on .play{opacity:0}.meta{padding:14px 16px;display:flex;justify-content:space-between;font-size:.9rem}.meta span{color:var(--mu)}
+.brand{padding:26px;background:var(--card);border:1px solid var(--line);border-radius:10px;transition:.3s;display:block}
+.brand:hover{border-color:var(--ac);transform:translateY(-4px)}.brand h3{font-size:1.4rem}.brand span{color:var(--ac);font-size:.85rem}
+.row{display:grid;grid-template-columns:50px 1fr 1.2fr;gap:16px;padding:22px 0;border-bottom:1px solid var(--line)}
+.row b{color:var(--ac);font-weight:500}.row p{color:var(--mu)}.row h3{font-size:1.1rem}
+.plan{position:relative;padding:32px 26px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.plan.pop{border-color:var(--ac);background:#1a2a1b}.badge{position:absolute;top:-12px;left:20px;background:var(--ac);color:#10150d;font-size:.7rem;font-weight:700;padding:3px 10px;letter-spacing:.08em;text-transform:uppercase}
+.price{font-family:Syne;font-size:2.4rem;margin:8px 0 18px}.price small{font-size:.9rem;color:var(--mu);font-family:'DM Sans'}
+.plan li{list-style:none;padding:8px 0;border-top:1px solid var(--line);color:var(--mu)}.plan li:before{content:"✓ ";color:var(--ac)}
+.plan{display:flex;flex-direction:column;transition:.3s;cursor:pointer}.plan:hover{transform:translateY(-6px);border-color:var(--ac)}
+.plan h4{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:18px 0 4px;font-weight:500}.plan ul.ex li:before{content:"+ ";color:#e0b050}
+.cta{margin-top:auto;padding-top:22px;color:var(--ac);font-weight:500}
+#plans{align-items:start}.more{max-height:0;opacity:0;overflow:hidden;transition:max-height .5s ease,opacity .35s}
+.plan:hover .more,.plan:focus-visible .more{max-height:800px;opacity:1}.hint{font-size:.8rem;color:var(--mu);margin-top:14px}.plan:hover .hint{display:none}
+@media(hover:none){.more{max-height:none;opacity:1}.hint{display:none}}
+.logo{display:flex;align-items:center;gap:10px}.lg{height:36px;width:36px;object-fit:contain;transition:transform .8s}.logo:hover .lg{transform:rotate(360deg) scale(1.1)}
+.hero .wrap{width:100%}.hw{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hlogo{position:relative;flex:0 0 min(36vw,380px);perspective:900px;transition:transform .2s ease-out}
+.hlogo:before{content:"";position:absolute;inset:-12%;background:radial-gradient(circle,rgba(195,225,122,.28),transparent 65%);animation:pg 4s ease-in-out infinite}
+.hlogo img{position:relative;width:100%;display:block;animation:fl 6s ease-in-out infinite;filter:drop-shadow(0 0 30px rgba(255,255,255,.18))}
+@keyframes fl{50%{transform:translateY(-16px) rotate(2deg)}}@keyframes pg{50%{opacity:.45;transform:scale(1.12)}}
+@media(max-width:700px){.hw{flex-direction:column-reverse;align-items:flex-start}.hlogo{flex-basis:auto;width:55%}}
+@media(prefers-reduced-motion:reduce){.hlogo img,.hlogo:before{animation:none}}
+.step{padding:24px;border-left:2px solid var(--ac)}.step b{color:var(--ac)}.step p{color:var(--mu)}
+.contact{background:#142016}.contact .btns{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 22px}
+footer{padding:28px 0;color:var(--mu);font-size:.85rem;border-top:1px solid var(--line)}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;place-items:center;z-index:50}
+#modal.open{display:grid}#mbox{width:min(92vw,380px);aspect-ratio:9/16;background:#000;position:relative}
+#mbox iframe,#mbox video{width:100%;height:100%;border:0}#x{position:absolute;top:-40px;right:0;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
+@media(max-width:700px){.links{display:none}.row{grid-template-columns:36px 1fr}.row p{grid-column:2}}
+</style></head><body>
+<nav><div class="wrap"><a class="logo" href="#top" id="logo"></a>
+<div class="links"><a href="#work">Work</a><a href="#brands">Brands</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#process">Process</a><a href="#about">About</a><a href="#contact">Contact</a></div></div></nav>
+<header class="hero" id="top"><div class="wrap rv hw"><div><div class="eyebrow" id="tag"></div><h1 id="hl"></h1><p id="intro"></p><a class="btn" href="#work">Explore selected work ↗</a></div><div class="hlogo" id="hlogo"><img src="images/logo.png" alt="ADVOME logo"></div></div></header>
+<section id="work"><div class="wrap"><div class="eyebrow">01 / Portfolio</div><h2>Selected Work</h2><div class="grid g4" id="videos"></div></div></section>
+<section id="brands"><div class="wrap"><div class="eyebrow">02 / Brands</div><h2>Brands we work with</h2><div class="grid g3" id="brandlist"></div></div></section>
+<section id="services"><div class="wrap"><div class="eyebrow">03 / What we do</div><h2>Services</h2><div id="svc"></div></div></section>
+<section id="pricing"><div class="wrap"><div class="eyebrow">04 / Packages</div><h2>Pricing</h2><div class="grid g3" id="plans"></div></div></section>
+<section id="process"><div class="wrap"><div class="eyebrow">05 / Process</div><h2>How we work</h2><div class="grid g4" id="steps"></div></div></section>
+<section id="about"><div class="wrap"><div class="eyebrow">06 / The agency</div><h2>About ADVOME</h2><p id="abouttext" style="color:var(--mu);max-width:640px;line-height:1.8"></p></div></section>
+<section id="contact" class="contact"><div class="wrap"><div class="eyebrow">07 / Get in touch</div><h2>Let’s make something worth noticing.</h2>
+<div class="btns"><a class="btn fill" id="wa" target="_blank" rel="noopener">WhatsApp ↗</a><a class="btn" id="mail">Email ↗</a></div><p id="ci" style="color:var(--mu)"></p></div></section>
+<footer><div class="wrap">© <span id="yr"></span> ADVOME · Digital marketing & creative</div></footer>
+<div id="modal"><div id="mbox"><button id="x" aria-label="Close">×</button><div id="mc" style="width:100%;height:100%"></div></div></div>
+<div id="err" style="display:none;position:fixed;z-index:99;left:0;right:0;top:0;background:#b3261e;color:#fff;padding:14px 20px;font:15px/1.5 system-ui"></div>
+<script>window.addEventListener("error",function(e){var b=document.getElementById("err");if(b.style.display==="block")return;var f=(e.filename||"").split("/").pop();b.style.display="block";b.innerHTML="<b>Site error:</b> "+(f==="content.js"?"there is a typing mistake in <b>content.js</b> around <b>line "+e.lineno+"</b> (check the line above it for a missing comma , or quote \"). ":"")+"<br><small>"+e.message+"</small>"});</script>
+<script src="content.js"></script>
+<script>
+const S=window.SITE,$=i=>document.getElementById(i),esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("logo").innerHTML='<img class="lg" src="images/logo.png" alt="">'+esc(S.brand)+".";$("tag").textContent=S.tagline;$("hl").textContent=S.headline;$("intro").textContent=S.intro;$("abouttext").textContent=S.about;
+$("wa").href="https://wa.me/"+S.whatsapp;$("mail").href="mailto:"+S.email;$("ci").textContent=`Email: ${S.email}   ·   Phone/WhatsApp: ${S.phone}`;$("yr").textContent=new Date().getFullYear();
+const yt=u=>(u.match(/(?:shorts\/|v=|youtu\.be\/)([\w-]{6,})/)||[])[1];
+$("videos").innerHTML=S.videos.map((v,i)=>{const id=yt(v.video||"");const poster=v.poster||(id&&!/VIDEO_ID/.test(id)?`https://img.youtube.com/vi/${id}/hqdefault.jpg`:"");
+return `<div class="vcard rv" data-i="${i}"><div class="thumb" style="${poster?`background-image:url(${esc(poster)})`:""}">${v.preview?`<video muted loop playsinline preload="metadata" src="${esc(v.preview)}"></video>`:""}<div class="play"></div></div><div class="meta"><b>${esc(v.title)}</b><span>${esc(v.tag)}</span></div></div>`}).join("");
+$("brandlist").innerHTML=S.brands.map(b=>`<a class="brand rv" href="${esc(b.instagram)}" target="_blank" rel="noopener"><h3>${esc(b.name)}</h3><p style="color:var(--mu)">${esc(b.note)}</p><span>View on Instagram ↗</span></a>`).join("");
+$("svc").innerHTML=S.services.map((s,i)=>`<div class="row rv"><b>0${i+1}</b><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("");
+const L=(t,a,cls)=>a&&a.length?`<h4>${t}</h4><ul class="${cls||""}">${a.map(f=>`<li>${esc(f)}</li>`).join("")}</ul>`:"";
+const waMsg=p=>["Hi ADVOME, I'm interested in the *"+p.name+"* plan.","Price: "+p.price+" "+(p.per||""),p.features&&p.features.length?"Deliverables: "+p.features.join(", "):"",p.includes&&p.includes.length?"Included: "+p.includes.join(", "):"",p.extras&&p.extras.length?"Charged extra: "+p.extras.join(", "):"",p.criteria&&p.criteria.length?"Criteria: "+p.criteria.join("; "):"","Please share more details."].filter(Boolean).join("\n");
+$("plans").innerHTML=S.plans.map(p=>`<a class="plan rv ${p.popular?"pop":""}" target="_blank" rel="noopener" href="https://wa.me/${S.whatsapp}?text=${encodeURIComponent(waMsg(p))}">${p.popular?'<div class="badge">Most popular</div>':""}<h3>${esc(p.name)}</h3><div class="price">${esc(p.price)}<small> ${esc(p.per)}</small></div>${L("Deliverables",p.features)}<div class="hint">Hover to see full details ↓</div><div class="more">${L("Included in price",p.includes)}${L("Charged extra",p.extras,"ex")}${L("Criteria",p.criteria)}</div><span class="cta">Choose this plan on WhatsApp ↗</span></a>`).join("");
+$("steps").innerHTML=S.process.map((s,i)=>`<div class="step rv"><b>0${i+1}</b><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>`).join("");
+// hover preview (desktop) + autoplay when visible (mobile)
+const touch=matchMedia("(hover:none)").matches;
+document.querySelectorAll(".vcard").forEach(c=>{const v=c.querySelector("video");if(!v)return;
+ const go=()=>{v.play().catch(()=>{});c.classList.add("on")},stop=()=>{v.pause();v.currentTime=0;c.classList.remove("on")};
+ if(!touch){c.onmouseenter=go;c.onmouseleave=stop}
+ else new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting?go():stop()),{threshold:.7}).observe(c)});
+// full video popup
+const M=$("modal"),MC=$("mc");const close=()=>{M.classList.remove("open");MC.innerHTML=""};
+$("x").onclick=close;M.onclick=e=>{if(e.target===M)close()};addEventListener("keydown",e=>e.key==="Escape"&&close());
+$("videos").onclick=e=>{const c=e.target.closest(".vcard");if(!c)return;const u=S.videos[c.dataset.i].video||"",id=yt(u);
+ if(/instagram\.com/.test(u)){open(u,"_blank");return}
+ MC.innerHTML=id?`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0" allow="autoplay;encrypted-media;fullscreen" allowfullscreen></iframe>`:`<video src="${esc(u)}" controls autoplay playsinline></video>`;M.classList.add("open")};
+document.querySelectorAll(".rv").forEach(el=>{new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){el.classList.add("in");o.disconnect()}},{threshold:.1}).observe(el)});
+
+// logo follows the mouse (3D tilt)
+(()=>{const t=$("top"),l=$("hlogo");if(!t||matchMedia("(hover:none)").matches||matchMedia("(prefers-reduced-motion:reduce)").matches)return;
+t.addEventListener("mousemove",e=>{const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;l.style.transform=`rotateY(${x*22}deg) rotateX(${-y*22}deg)`});
+t.addEventListener("mouseleave",()=>l.style.transform="")})();
+</script></body></html>
